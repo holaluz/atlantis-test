@@ -1,0 +1,16 @@
+version: 3
+projects:
+  - name: staging
+    dir: etc/terraform/environments
+    workflow: workspace-staging
+    autoplan:
+      when_modified: ["*.tf*"]
+    terraform_version: v1.0.11
+  - name: prod
+    dir: etc/terraform/environments
+    workflow: workspace-prod
+    terraform_version: v1.0.11
+  - name: repository
+    dir: etc/terraform/repository
+    workflow: workspace-repository
+    terraform_version: v1.0.11
